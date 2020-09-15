@@ -4,14 +4,9 @@ const assertEqual = function(actual, expected) {
   } else (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
 };
 
-// Returns head of an array
-// const head = function([h]){
-//   return h;
-// };
-
-// Returns tail of an array: everything except for the first item
-const tail = function([, ...t]) {
-  return t;
+const tail = function(arr) {
+  let newArr = arr.slice(1);
+  return newArr
 };
 
 
@@ -30,4 +25,4 @@ const words = ["Yo Yo", "Lighthouse", "Labs"];
 tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
 
-// console.log(tail([1, 2, 3, 4]), 5);
+console.log(tail([1, 2, 3, 4]), 5);
