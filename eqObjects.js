@@ -1,4 +1,4 @@
-// assertEqual function
+// assertEqual FUNCTION
 
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
@@ -6,7 +6,7 @@ const assertEqual = function(actual, expected) {
   } else (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
 };
 
-// eqArrays function
+// eqArrays FUNCTION
 
 const eqArrays = function(arr1, arr2) {
   if (arr1.length !== arr2.length) {
@@ -22,7 +22,7 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-// eqObjects function
+// eqObjects FUNCTION
 
 const eqObjects = function(object1, object2) {
   // Object1, Object2 keys stored in arr1, arr2
@@ -32,23 +32,21 @@ const eqObjects = function(object1, object2) {
   if (arr1.length !== arr2.length) {
     return false;
   }
-
-
   // Loop keys returned for one object
-  for (const newArr of arr1) {
-
-    // Compare values
-    // if ((object1[newArr]) !== (object2[newArr])) {
-    //     return false;
-    // }
-    if (Array.isArray(object1[newArr]) || Array.isArray(object2[newArr])) {
-      return eqArrays(object1[newArr], object2[newArr]);
-    } else if (object1[newArr] === object2[newArr]) {
-      return true;
-    } else {
-      return false;
+  for (let key of arr1) {
+    let objectOneValue = object1[key];
+    let objectTwoValue = object2[key];
+    // console.log('*check*', arr1);
+    // Condition, check if object1, object2 are arrays, if true call eqArrays
+    if (Array.isArray(objectOneValue) && Array.isArray(objectTwoValue)) {
+            // console.log('*check*', object1[key], object2[key]);
+      if (!eqArrays(objectOneValue, objectTwoValue)) {
+        return false;
     }
-  } return false;
+      } else if (objectOneValue !== objectTwoValue) {
+          return false;
+      }
+  } return true;
 };
 
 
