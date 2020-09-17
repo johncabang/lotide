@@ -21,3 +21,36 @@ const eqObjects = function(object1, object2) {
   } return false;
 };
 
+// Function implementation
+// Will take in two objects, console.log a message (passed or failed)
+
+const assertObjectsEqual = function(actual, expected) {
+  // import library - util, library's inspect function
+  const inspect = require('util').inspect;
+  if (eqObjects(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  }
+};
+
+
+// Test Case: Primitives as values
+
+const ab = { a: '1', b: '2' };
+const ba = { b: '2', a: '1' };
+assertObjectsEqual(ab, ba); // returns true
+
+const abc = { a: '1', b: '2', c: '3' };
+assertObjectsEqual(ab, abc); // returns false
+
+
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+assertObjectsEqual(cd, dc); // returns true
+
+const cd2 = { c: "1", d: ["2", 3, 4] };
+
+// console.log returns true ** needs to fix ************************
+assertObjectsEqual(cd, cd2); // returns false
