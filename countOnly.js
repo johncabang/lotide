@@ -10,9 +10,11 @@ const assertEqual = function(actual, expected) {
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
+
 const countOnly = function(allItems, itemsToCount) {
-  const results = {};
+  const results = {}; // created empty object to store the results
   for (const item of allItems) {
+    // console.log('*check*', item); // check value or array
     if (itemsToCount[item]) {
       if (results[item]) {
         results[item] += 1;
@@ -26,11 +28,6 @@ const countOnly = function(allItems, itemsToCount) {
   console.log(results);
   return results;
 };
-
-
-
-
-
 
 const firstNames = [
   "Karl", // allItems[0]
@@ -46,7 +43,7 @@ const firstNames = [
 
 const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 
-assertEqual(result1["Jason"], 1);
-assertEqual(result1["Karima"], undefined);
-assertEqual(result1["Fang"], 2);
-assertEqual(result1["Agouhanna"], undefined);
+// assertEqual(result1["Jason"], 1);
+// assertEqual(result1["Karima"], undefined);
+// assertEqual(result1["Fang"], 2);
+// assertEqual(result1["Agouhanna"], undefined);
