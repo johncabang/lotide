@@ -4,8 +4,8 @@ const assertEqual = function(actual, expected) {
   } else (console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`));
 };
 
-const tail = function(arr) {
-  let newArr = arr.slice(1);
+const tail = function(arr) { // arr = array argument
+  let newArr = arr.slice(1); // slice function, starts at 1 index, removes the remaining values
   return newArr;
 };
 
@@ -26,3 +26,4 @@ tail(words); // no need to capture the return value since we are not checking it
 assertEqual(words.length, 3); // original array should still have 3 elements!
 
 console.log(tail([1, 2, 3, 4]), 5);
+console.log(tail(words));
