@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@johncabang/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "A clone of the lodash JavaScript",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/johncabang/lotide.git"
   },
-  "author": "",
+  "author": "John Cabang",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/johncabang/lotide/issues"
